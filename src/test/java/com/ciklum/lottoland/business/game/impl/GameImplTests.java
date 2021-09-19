@@ -1,8 +1,7 @@
 package com.ciklum.lottoland.business.game.impl;
 
-import business.enums.Outcome;
-import business.enums.Play;
-import business.game.impl.GameImpl;
+import com.ciklum.lottoland.business.enums.Outcome;
+import com.ciklum.lottoland.business.enums.Play;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

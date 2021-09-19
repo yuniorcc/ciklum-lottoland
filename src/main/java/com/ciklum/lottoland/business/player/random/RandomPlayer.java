@@ -1,7 +1,7 @@
-package business.player.random;
+package com.ciklum.lottoland.business.player.random;
 
-import business.enums.Play;
-import business.player.Player;
+import com.ciklum.lottoland.business.enums.Play;
+import com.ciklum.lottoland.business.player.Player;
 
 import java.util.Random;
 

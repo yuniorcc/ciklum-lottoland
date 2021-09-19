@@ -1,7 +1,6 @@
 package com.ciklum.lottoland.business.player.rock;
 
-import business.enums.Play;
-import business.player.rock.RockPlayer;
+import com.ciklum.lottoland.business.enums.Play;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

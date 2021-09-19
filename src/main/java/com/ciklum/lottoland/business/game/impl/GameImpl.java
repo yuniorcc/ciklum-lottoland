@@ -1,8 +1,8 @@
-package business.game.impl;
+package com.ciklum.lottoland.business.game.impl;
 
-import business.enums.Outcome;
-import business.enums.Play;
-import business.game.Game;
+import com.ciklum.lottoland.business.enums.Outcome;
+import com.ciklum.lottoland.business.enums.Play;
+import com.ciklum.lottoland.business.game.Game;
 
 public class GameImpl implements Game {
 
