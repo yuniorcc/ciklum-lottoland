@@ -1,8 +1,8 @@
-package com.ciklum.lottoland.controllers.impl;
+package com.ciklum.lottoland.controllers.game.impl;
 
 import com.ciklum.lottoland.business.enums.Outcome;
 import com.ciklum.lottoland.business.enums.Play;
-import com.ciklum.lottoland.controllers.GameController;
+import com.ciklum.lottoland.controllers.game.GameController;
 import com.ciklum.lottoland.dtos.GameResult;
 import com.ciklum.lottoland.services.GameService;
 import com.fasterxml.jackson.databind.ObjectMapper;

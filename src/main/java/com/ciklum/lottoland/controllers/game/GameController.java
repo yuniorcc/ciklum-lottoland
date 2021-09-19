@@ -1,4 +1,4 @@
-package com.ciklum.lottoland.controllers;
+package com.ciklum.lottoland.controllers.game;
 
 import com.ciklum.lottoland.dtos.GameResult;
 import org.springframework.http.ResponseEntity;
