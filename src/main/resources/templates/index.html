@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rock Paper Scissors</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+        function playRound() {
+            $.ajax({
+                type: "POST",
+                url: "http://localhost:8080/game/play-game",
+                success: function(data) {
+                    addRoundToTable(data);
+                    increaseCounter();
+                }
+            });
+        }
+
+        function addRoundToTable(data) {
+            var roundTable = document.getElementById("round-table");
+            var row = roundTable.insertRow(1);
+            var col0 = row.insertCell(0);
+            var col1 = row.insertCell(1);
+            var col2 = row.insertCell(2);
+            col0.innerHTML = data.playerOne;
+            col1.innerHTML = data.playerTwo;
+            col2.innerHTML = data.outcome;
+        }
+
+        function increaseCounter() {
+            var counter = document.getElementById('round-counter');
+            var number = counter.innerHTML;
+            number++;
+            counter.innerHTML = number;
+        }
+
+        function restartGame() {
+            resetTable();
+            resetCounter();
+        }
+
+        function resetTable() {
+            var tableHeaderRowCount = 1;
+            var table = document.getElementById('round-table');
+            var rowCount = table.rows.length;
+            for (var i = tableHeaderRowCount; i < rowCount; i++) {
+                table.deleteRow(tableHeaderRowCount);
+            }
+        }
+
+        function resetCounter() {
+            var counter = document.getElementById('round-counter');
+            counter.innerHTML = 0;
+        }
+    </script>
+</head>
+
+<body>
+    <button onclick="playRound()">Play Round</button>
+    <button onclick="restartGame()">Restart game</button>
+
+    <br/>
+
+    <label>Rounds played: </label><label id="round-counter">0</label>
+
+    <table id="round-table">
+        <tr>
+            <th>Player One Play</th>
+            <th>Player Two Play</th>
+            <th>Outcome</th>
+        </tr>
+    </table>
+</body>
+</html>
