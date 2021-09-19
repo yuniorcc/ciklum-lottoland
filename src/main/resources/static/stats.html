@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rock Paper Scissors</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            refreshStats();
+        });
+
+        function refreshStats() {
+            $.ajax({
+                type: "GET",
+                url: "http://localhost:8080/stats",
+                success: function (data) {
+                    refreshData(data);
+                }
+            });
+        }
+
+        function refreshData(data) {
+            document.getElementById("rounds").innerHTML = data.rounds;
+            document.getElementById("playerOneWins").innerHTML = data.playerOneWins;
+            document.getElementById("playerTwoWins").innerHTML = data.playerTwoWins;
+            document.getElementById("draws").innerHTML = data.draws;
+        }
+
+    </script>
+</head>
+
+<body>
+    <button onclick="refreshStats()">Refresh Stats</button>
+    <br/>
+    <br/>
+    <label>Rounds played: </label><label id="rounds">0</label>
+    <br/>
+    <br/>
+    <label>Player One Victories: </label><label id="playerOneWins">0</label>
+    <br/>
+    <br/>
+    <label>Player Two Victories: </label><label id="playerTwoWins">0</label>
+    <br/>
+    <br/>
+    <label>Draws: </label><label id="draws">0</label>
+</body>
+</html>
