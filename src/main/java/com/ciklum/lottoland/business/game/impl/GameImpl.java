@@ -3,7 +3,9 @@ package com.ciklum.lottoland.business.game.impl;
 import com.ciklum.lottoland.business.enums.Outcome;
 import com.ciklum.lottoland.business.enums.Play;
 import com.ciklum.lottoland.business.game.Game;
+import org.springframework.stereotype.Component;
 
+@Component
 public class GameImpl implements Game {
 
     @Override

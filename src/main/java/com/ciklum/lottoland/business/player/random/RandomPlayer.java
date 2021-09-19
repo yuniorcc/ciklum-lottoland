@@ -2,9 +2,11 @@ package com.ciklum.lottoland.business.player.random;
 
 import com.ciklum.lottoland.business.enums.Play;
 import com.ciklum.lottoland.business.player.Player;
+import org.springframework.stereotype.Component;
 
 import java.util.Random;
 
+@Component
 public class RandomPlayer implements Player {
 
     @Override
